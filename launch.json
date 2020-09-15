@@ -1,0 +1,372 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PMM Release",
+            "preLaunchTask": "build-release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Release/pmm",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/Release",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "PMM Debug",
+            "preLaunchTask": "build-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Debug/pmm",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test Release",
+            "preLaunchTask": "build-test-release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test/Release/test",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test/Release",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test Debug",
+            "preLaunchTask": "build-test-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test/Debug/test",
+            "args": [
+                "camelhead.off",
+                "501",
+                "1"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test img Debug",
+            "preLaunchTask": "build-test-img-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_img/Debug/test",
+            "args": [
+                "inspired_mesh.obj",
+                "3",
+                "1"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_img/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test img geo Debug",
+            "preLaunchTask": "build-test-img-geo-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_img_geo/Debug/test",
+            "args": [
+                "camelhead.off",
+                "501",
+                "1"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_img_geo/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test img geo Release",
+            "preLaunchTask": "build-test-img-geo-release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_img_geo/Release/test",
+            "args": [
+                "camelhead.off",
+                "1001",
+                "1"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_img_geo/Release",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test cpu Debug",
+            "preLaunchTask": "build-test-cpu-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_cpu/Debug/test",
+            "args": [
+                "--model=bump-domain.obj", // Model
+                "--height=11", // Geometric image height/rows
+                "--width=11", // Geometric image width/columns
+                "--harmonic=1", // Harmonic mapping constant (default 1)
+                "--iterations=1", // Number of PMM iterations (default 1)
+                "--source=60", // Source vertex index (1 dimensional; optional)
+                "--file=../mat.bin",
+                "--ignore-non-acute"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_cpu/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test cpu Release",
+            "preLaunchTask": "build-test-cpu-release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_cpu/Release/test",
+            "args": [
+                "--model=camelhead.off", // Model
+                "--height=1001", // Geometric image height/rows
+                "--width=1001", // Geometric image width/columns
+                "--harmonic=1", // Harmonic mapping constant (default 1)
+                "--iterations=1", // Number of PMM iterations (default 1)
+                "--source=501000", // Source vertex index (1 dimensional; optional)
+                "--file=../mat.bin",
+                "--ignore-non-acute"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_cpu/Release",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test eigen Debug",
+            "preLaunchTask": "build-test-eigen-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_eigen/Debug/test",
+            "args": [
+                "--model=bump-domain.obj", // Model
+                "--length=3", // Geometric image length
+                "--harmonic=1", // Harmonic mapping constant
+                "--iterations=1", // Number of PMM iterations
+                "--source=4", "5", "6" // Source vertex index (1 dimensional; optional)
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_eigen/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test eigen Release",
+            "preLaunchTask": "build-test-eigen-release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_eigen/Release/test",
+            "args": [
+                "camelhead.off",
+                "1001",
+                "1"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_eigen/Release",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test gpu Debug",
+            "preLaunchTask": "build-test-gpu-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_gpu/Debug/test",
+            "args": [
+                "--model=bump-domain.obj", // Model
+                "--height=1001", // Geometric image height/rows
+                "--width=1001", // Geometric image width/columns
+                "--harmonic=1", // Harmonic mapping constant (default 1)
+                "--iterations=1", // Number of PMM iterations (default 1)
+                "--source=60", // Source vertex index (1 dimensional; optional)
+                "--file=../mat.bin",
+                "--ignore-non-acute"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_gpu/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test gpu Release",
+            "preLaunchTask": "build-test-gpu-release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_gpu/Release/test",
+            "args": [
+                "--model=bump-domain.obj", // Model
+                "--height=1001", // Geometric image height/rows
+                "--width=1001", // Geometric image width/columns
+                "--harmonic=1", // Harmonic mapping constant (default 1)
+                "--iterations=1", // Number of PMM iterations (default 1)
+                "--source=60", // Source vertex index (1 dimensional; optional)
+                "--file=../mat.bin",
+                "--ignore-non-acute"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_gpu/Release",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test cuda Debug",
+            "preLaunchTask": "build-test-cuda-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_cuda/Debug/test",
+            "args": [
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_cuda/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test cuda Release",
+            "preLaunchTask": "build-test-cuda-release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_cuda/Release/test",
+            "args": [
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_cuda/Release",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

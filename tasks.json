@@ -1,0 +1,82 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-release",
+            "type": "shell",
+            "command": "mkdir -p Release && cd Release && cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../libigl ../pmm && make -j9"
+        },
+        {
+            "label": "build-debug",
+            "type": "shell",
+            "command": "mkdir -p Debug && cd Debug && cmake -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../libigl ../pmm && make -j9"
+        },
+        {
+            "label": "build-test-release",
+            "type": "shell",
+            "command": "mkdir -p test/Release && cd test/Release && cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-debug",
+            "type": "shell",
+            "command": "mkdir -p test/Debug && cd test/Debug && cmake -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-img-debug",
+            "type": "shell",
+            "command": "mkdir -p test_img/Debug && cd test_img/Debug && cmake -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-img-geo-debug",
+            "type": "shell",
+            "command": "mkdir -p test_img_geo/Debug && cd test_img_geo/Debug && cmake -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-img-geo-release",
+            "type": "shell",
+            "command": "mkdir -p test_img_geo/Release && cd test_img_geo/Release && cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-cpu-debug",
+            "type": "shell",
+            "command": "mkdir -p test_cpu/Debug && cd test_cpu/Debug && cmake -DMATRIX_FILE=ON -DMatlab_ROOT_DIR=/usr/local/MATLAB/R2020a -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-cpu-release",
+            "type": "shell",
+            "command": "mkdir -p test_cpu/Release && cd test_cpu/Release && cmake -DMATRIX_FILE=ON -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-eigen-debug",
+            "type": "shell",
+            "command": "mkdir -p test_eigen/Debug && cd test_eigen/Debug && cmake -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-eigen-release",
+            "type": "shell",
+            "command": "mkdir -p test_eigen/Release && cd test_eigen/Release && cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-gpu-debug",
+            "type": "shell",
+            "command": "mkdir -p test_gpu/Debug && cd test_gpu/Debug && cmake -DMATRIX_FILE=ON -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-gpu-release",
+            "type": "shell",
+            "command": "mkdir -p test_gpu/Release && cd test_gpu/Release && cmake -DMATRIX_FILE=ON -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-cuda-debug",
+            "type": "shell",
+            "command": "mkdir -p test_cuda/Debug && cd test_cuda/Debug && cmake -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-cuda-release",
+            "type": "shell",
+            "command": "mkdir -p test_cuda/Release && cd test_cuda/Release && cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        }
+    ]
+}
