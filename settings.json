@@ -78,7 +78,22 @@
         "hash_map": "cpp",
         "regex": "cpp",
         "*.cu": "cpp",
-        "*.cuh": "cpp"
+        "*.cuh": "cpp",
+        "strstream": "cpp",
+        "cfenv": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "unordered_set": "cpp",
+        "future": "cpp",
+        "mutex": "cpp",
+        "cinttypes": "cpp",
+        "typeindex": "cpp",
+        "variant": "cpp",
+        "__nullptr": "cpp",
+        "polynomials": "cpp",
+        "__locale": "cpp",
+        "__tuple": "cpp",
+        "version": "cpp"
     },
     "cmake.configureOnOpen": false
 }
