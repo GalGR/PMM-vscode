@@ -200,7 +200,7 @@
                 "--height=1001", // Geometric image height/rows
                 "--width=1001", // Geometric image width/columns
                 "--harmonic=1", // Harmonic mapping constant (default 1)
-                "--iterations=1", // Number of PMM iterations (default 1)
+                "--iterations=2", // Number of PMM iterations (default 1)
                 "--source=501000", // Source vertex index (1 dimensional; optional)
                 "--file=../mat.bin",
                 "--ignore-non-acute"
@@ -333,6 +333,10 @@
             "request": "launch",
             "program": "${workspaceFolder}/test_cuda/Debug/test",
             "args": [
+                "--width=4000",
+                "--height=4000",
+                "--depth=15",
+                // "--print-array",
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/test_cuda/Debug",
@@ -354,6 +358,10 @@
             "request": "launch",
             "program": "${workspaceFolder}/test_cuda/Release/test",
             "args": [
+                "--width=4000",
+                "--height=4000",
+                "--depth=15",
+                // "--print-array",
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/test_cuda/Release",
