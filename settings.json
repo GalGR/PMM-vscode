@@ -93,7 +93,13 @@
         "polynomials": "cpp",
         "__locale": "cpp",
         "__tuple": "cpp",
-        "version": "cpp"
+        "version": "cpp",
+        "__hash_table": "cpp",
+        "__split_buffer": "cpp",
+        "__tree": "cpp",
+        "queue": "cpp",
+        "stack": "cpp",
+        "ios": "cpp"
     },
     "cmake.configureOnOpen": false
 }

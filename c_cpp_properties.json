@@ -9,7 +9,8 @@
             ],
             "defines": [
                 "MATRIX_FILE",
-                "PRINT_DEVICE_INFO"
+                "PRINT_DEVICE_INFO",
+                "__CUDACC__"
             ],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",

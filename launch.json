@@ -282,7 +282,8 @@
                 "--iterations=1", // Number of PMM iterations (default 1)
                 "--source=60", // Source vertex index (1 dimensional; optional)
                 "--file=../mat.bin",
-                "--ignore-non-acute"
+                "--threads=32", // Number of threads in each kernel block (multiple of 32)
+                "--omega=1", // the height of the kernel tile minus 1 (name Omega in the paper; must be at least 1)
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/test_gpu/Debug",
@@ -311,7 +312,8 @@
                 "--iterations=1", // Number of PMM iterations (default 1)
                 "--source=60", // Source vertex index (1 dimensional; optional)
                 "--file=../mat.bin",
-                "--ignore-non-acute"
+                "--threads=32", // Number of threads in each kernel block (multiple of 32)
+                "--omega=1", // the height of the kernel tile minus 1 (name Omega in the paper; must be at least 1)
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/test_gpu/Release",
