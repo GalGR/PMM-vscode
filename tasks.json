@@ -61,7 +61,7 @@
         {
             "label": "build-test-gpu-debug",
             "type": "shell",
-            "command": "mkdir -p test_gpu/Debug && cd test_gpu/Debug && cmake -DMATRIX_FILE=ON -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+            "command": "mkdir -p test_gpu/Debug && cd test_gpu/Debug && cmake -DCUDA_DEBUG_PRINT=ON -DMATRIX_FILE=ON -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
         },
         {
             "label": "build-test-gpu-release",

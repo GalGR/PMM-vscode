@@ -276,19 +276,20 @@
             "program": "${workspaceFolder}/test_gpu/Debug/test",
             "args": [
                 "--model=bump-domain.obj", // Model
-                "--height=1001", // Geometric image height/rows
-                "--width=1001", // Geometric image width/columns
+                "--height=101", // Geometric image height/rows
+                "--width=101", // Geometric image width/columns
                 "--harmonic=1", // Harmonic mapping constant (default 1)
-                "--iterations=1", // Number of PMM iterations (default 1)
-                "--source=60", // Source vertex index (1 dimensional; optional)
+                "--iterations=4", // Number of PMM iterations (default 1)
+                "--source=50", // Source vertex index (1 dimensional; optional)
                 "--file=../mat.bin",
                 "--threads=32", // Number of threads in each kernel block (multiple of 32)
-                "--omega=1", // the height of the kernel tile minus 1 (name Omega in the paper; must be at least 1)
+                "--omega=16", // the height of the kernel tile minus 1 (name Omega in the paper; must be at least 1)
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/test_gpu/Debug",
             "environment": [],
             "externalConsole": false,
+            // "miDebuggerPath": "/usr/local/cuda/bin/cuda-gdb",
             "MIMode": "gdb",
             "setupCommands": [
                 {
@@ -319,6 +320,7 @@
             "cwd": "${workspaceFolder}/test_gpu/Release",
             "environment": [],
             "externalConsole": false,
+            // "miDebuggerPath": "/usr/local/cuda/bin/cuda-gdb",
             "MIMode": "gdb",
             "setupCommands": [
                 {
