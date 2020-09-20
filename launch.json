@@ -196,12 +196,14 @@
             "request": "launch",
             "program": "${workspaceFolder}/test_cpu/Release/test",
             "args": [
-                "--model=camelhead.off", // Model
+                // "--model=camelhead.off", // Model
+                "--model=bump-domain.obj", // Model
                 "--height=1001", // Geometric image height/rows
                 "--width=1001", // Geometric image width/columns
                 "--harmonic=1", // Harmonic mapping constant (default 1)
                 "--iterations=2", // Number of PMM iterations (default 1)
-                "--source=501000", // Source vertex index (1 dimensional; optional)
+                // "--source=501000", // Source vertex index (1 dimensional; optional)
+                "--source=500", // Source vertex index (1 dimensional; optional)
                 "--file=../mat.bin",
                 "--ignore-non-acute"
             ],
@@ -368,12 +370,13 @@
             "request": "launch",
             "program": "${workspaceFolder}/test_gpu/Release/test",
             "args": [
-                "--model=bump-domain.obj", // Model
-                "--height=1000", // Geometric image height/rows
-                "--width=1000", // Geometric image width/columns
+                "--model=camelhead.off", // Model
+                "--height=2048", // Geometric image height/rows
+                "--width=2048", // Geometric image width/columns
                 "--harmonic=1", // Harmonic mapping constant (default 1)
                 "--iterations=1", // Number of PMM iterations (default 1)
-                "--source=60", // Source vertex index (1 dimensional; optional)
+                "--source=2098176", // Source vertex index (1 dimensional; optional)
+                // "--source=501500", // Leftwards
                 "--file=../mat.bin",
                 "--threads=32", // Number of threads in each kernel block (multiple of 32)
                 "--omega=8", // the height of the kernel tile minus 1 (name Omega in the paper; must be at least 1)
@@ -441,6 +444,64 @@
                     "ignoreFailures": true
                 }
             ]
-        }
+        },
+        {
+            "name": "Test cpu kernel Debug",
+            "preLaunchTask": "build-test-cpu-kernel-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_cpu_kernel/Debug/test",
+            "args": [
+                "--model=bump-domain.obj", // Model
+                "--height=11", // Geometric image height/rows
+                "--width=11", // Geometric image width/columns
+                "--harmonic=1", // Harmonic mapping constant (default 1)
+                "--iterations=1", // Number of PMM iterations (default 1)
+                "--source=60", // Source vertex index (1 dimensional; optional)
+                "--file=../mat.bin",
+                "--ignore-non-acute"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_cpu_kernel/Debug",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test cpu kernel Release",
+            "preLaunchTask": "build-test-cpu-kernel-release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_cpu_kernel/Release/test",
+            "args": [
+                "--model=bump-domain.obj", // Model
+                "--height=1001", // Geometric image height/rows
+                "--width=1001", // Geometric image width/columns
+                "--harmonic=1", // Harmonic mapping constant (default 1)
+                "--iterations=1", // Number of PMM iterations (default 1)
+                "--source=500", // Source vertex index (1 dimensional; optional)
+                "--file=../mat.bin",
+                "--ignore-non-acute"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_cpu_kernel/Release",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
     ]
 }

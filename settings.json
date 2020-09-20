@@ -99,7 +99,8 @@
         "__tree": "cpp",
         "queue": "cpp",
         "stack": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "*.bak": "cpp"
     },
     "cmake.configureOnOpen": false
 }

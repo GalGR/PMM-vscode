@@ -87,6 +87,16 @@
             "label": "build-test-cuda-release",
             "type": "shell",
             "command": "mkdir -p test_cuda/Release && cd test_cuda/Release && cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
-        }
+        },
+        {
+            "label": "build-test-cpu-kernel-debug",
+            "type": "shell",
+            "command": "mkdir -p test_cpu_kernel/Debug && cd test_cpu_kernel/Debug && cmake -DMATRIX_FILE=ON -DMatlab_ROOT_DIR=/usr/local/MATLAB/R2020a -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-test-cpu-kernel-release",
+            "type": "shell",
+            "command": "mkdir -p test_cpu_kernel/Release && cd test_cpu_kernel/Release && cmake -DMATRIX_FILE=ON -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
     ]
 }
