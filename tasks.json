@@ -59,14 +59,24 @@
             "command": "mkdir -p test_eigen/Release && cd test_eigen/Release && cmake -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
         },
         {
+            "label": "build-static-gpu-debug",
+            "type": "shell",
+            "command": "mkdir -p test_gpu/Debug_Static && cd test_gpu/Debug_Static && cmake -DCUDA_DEBUG_PRINT=OFF -DMATRIX_FILE=ON -DLIBIGL_USE_STATIC_LIBRARY=ON -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
+            "label": "build-static-gpu-release",
+            "type": "shell",
+            "command": "mkdir -p test_gpu/Release_Static && cd test_gpu/Release_Static && cmake -DCUDA_DEBUG_PRINT=OFF -DMATRIX_FILE=ON -DLIBIGL_USE_STATIC_LIBRARY=ON -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
+        },
+        {
             "label": "build-test-gpu-debug",
             "type": "shell",
-            "command": "mkdir -p test_gpu/Debug && cd test_gpu/Debug && cmake -DCUDA_DEBUG_PRINT=ON -DMATRIX_FILE=ON -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
+            "command": "mkdir -p test_gpu/Debug && cd test_gpu/Debug && cmake -DCUDA_DEBUG_PRINT=OFF -DMATRIX_FILE=ON -DLIBIGL_USE_STATIC_LIBRARY=OFF -DCMAKE_BUILD_TYPE=Debug -DLIBIGL_DIR=../../libigl ../test && make -j9"
         },
         {
             "label": "build-test-gpu-release",
             "type": "shell",
-            "command": "mkdir -p test_gpu/Release && cd test_gpu/Release && cmake -DMATRIX_FILE=ON -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
+            "command": "mkdir -p test_gpu/Release && cd test_gpu/Release && cmake -DCUDA_DEBUG_PRINT=OFF -DMATRIX_FILE=ON -DLIBIGL_USE_STATIC_LIBRARY=OFF -DCMAKE_BUILD_TYPE=Release -DLIBIGL_DIR=../../libigl ../test && make -j9"
         },
         {
             "label": "build-test-cuda-debug",
