@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Create Test Geometry",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/create_test_geometry/__init__.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/data"
+        },
+        {
             "name": "PMM Release",
             "preLaunchTask": "build-release",
             "type": "cppdbg",
@@ -231,7 +239,9 @@
                 "--length=3", // Geometric image length
                 "--harmonic=1", // Harmonic mapping constant
                 "--iterations=1", // Number of PMM iterations
-                "--source=4", "5", "6" // Source vertex index (1 dimensional; optional)
+                "--source=4",
+                "5",
+                "6" // Source vertex index (1 dimensional; optional)
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/test_eigen/Debug",
@@ -374,10 +384,73 @@
                 "--height=2048", // Geometric image height/rows
                 "--width=2048", // Geometric image width/columns
                 "--harmonic=1", // Harmonic mapping constant (default 1)
-                "--iterations=1", // Number of PMM iterations (default 1)
+                "--iterations=2", // Number of PMM iterations (default 1)
                 "--source=2098176", // Source vertex index (1 dimensional; optional)
                 // "--source=501500", // Leftwards
+                // "--file=../mat.bin",
+                "--threads=32", // Number of threads in each kernel block (multiple of 32)
+                "--omega=8", // the height of the kernel tile minus 1 (name Omega in the paper; must be at least 1)
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_gpu/Release",
+            "environment": [],
+            "externalConsole": false,
+            // "miDebuggerPath": "/usr/local/cuda/bin/cuda-gdb",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test gpu accuracy Debug",
+            "preLaunchTask": "build-test-gpu-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_gpu/Debug/test-accuracy",
+            "args": [
+                "--model=camelhead.off", // Model
+                // "--model=test_disk.obj", // Model
+                "--height=501", // Geometric image height/rows
+                "--width=501", // Geometric image width/columns
+                "--harmonic=1", // Harmonic mapping constant (default 1)
+                "--iterations=1", // Number of PMM iterations (default 1)
+                "--source=50", // Source vertex index (1 dimensional; optional)
                 "--file=../mat.bin",
+                "--threads=32", // Number of threads in each kernel block (multiple of 32)
+                "--omega=8", // the height of the kernel tile minus 1 (name Omega in the paper; must be at least 1)
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/test_gpu/Debug",
+            "environment": [],
+            "externalConsole": false,
+            // "miDebuggerPath": "/usr/local/cuda/bin/cuda-gdb",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Test gpu accuracy Release",
+            "preLaunchTask": "build-test-gpu-release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_gpu/Release/test-accuracy",
+            "args": [
+                "--height=2048", // Geometric image height/rows
+                "--width=2048", // Geometric image width/columns
+                "--harmonic=1", // Harmonic mapping constant (default 1)
+                "--iterations=2", // Number of PMM iterations (default 1)
+                "--source=2098176", // Source vertex index (1 dimensional; optional)
+                // "--source=501500", // Leftwards
+                // "--file=../mat.bin",
                 "--threads=32", // Number of threads in each kernel block (multiple of 32)
                 "--omega=8", // the height of the kernel tile minus 1 (name Omega in the paper; must be at least 1)
             ],

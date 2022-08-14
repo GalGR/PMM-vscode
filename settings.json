@@ -100,7 +100,8 @@
         "queue": "cpp",
         "stack": "cpp",
         "ios": "cpp",
-        "*.bak": "cpp"
+        "*.bak": "cpp",
+        "*.expression": "cpp"
     },
     "cmake.configureOnOpen": false
 }
